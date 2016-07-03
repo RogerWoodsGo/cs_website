@@ -1,0 +1,125 @@
+<html>
+  <head>
+    <meta name="generator"
+    content="HTML Tidy for HTML5 (experimental) for Windows https://github.com/w3c/tidy-html5/tree/c63cc39" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript"
+    src="static/js/jquery-2.0.0.min.js"></script>
+    <script type="text/javascript" src="static/js/jquery-ui"></script>
+    <link href="static/css/bootstrap-combined.min.css" rel="stylesheet"
+    media="screen" />
+    <link href="static/css/main_content.css" rel='stylesheet' type='text/css' />
+    <script type="text/javascript" src="static/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="static/js/showlist.js"></script>
+    <title>我是一只会爬的虫！</title>
+  </head>
+  <body>
+   <div class = "head">
+    我是一只会
+    <div class = "pa">爬</div>
+    的
+    <div class = "chong">虫</div>
+    <div class = "image_insect">
+    <!-- <a href='http://121.42.30.109:8000'><img src='/static/images/insect.jpg' alt='自强学堂' class='img-responsive'></a> -->
+    </div>
+   </div>
+    <div class="container-fluid">
+      <div class="row-fluid">
+        <div class="span12">
+          <ul class="nav nav-tabs nav-justified" id="website_menu">
+            <li class="active" onclick = "onChangeWebsite('all', this)">
+              <a href="#" rel="nofollow" name="all">所有</a>
+            </li>
+            <li onclick = "onChangeWebsite('36kr', this)">
+              <a href="#" rel="nofollow" name="36kr">36氪</a>
+            </li>
+            <li onclick = "onChangeWebsite('36kr', this)">
+              <a href="#" rel="nofollow" name="cyb">创业帮</a>
+            </li>
+            <li class="dropdown" onclick = "onChangeWebsite('36kr', this)">
+              <a class="dropdown-toggle" data-toggle="dropdown" href="#">微信公众号</a>
+              <ul class="dropdown-menu">
+                <li>
+                  <a href="#">1</a>
+                </li>
+                <li>
+                  <a href="#">2</a>
+                </li>
+                <li>
+                  <a href="#">3</a>
+                </li>
+              </ul>
+            </li>
+            <li onclick = "onChangeWebsite('other', this)">
+              <a href="#" rel="nofollow" name="other">其它</a>
+            </li>
+            <li>
+              <a href="static/images/frame.png" rel="nofollow">程序框架</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="filter">
+      <ul id="item_menu">
+        <li class="hint">
+          <span>筛选情报：</span>
+        </li>
+        <li onclick="onChangeItem('bigdata', this)">
+          <span>
+            <a href="#" name="bigdata">大数据</a>
+          </span>
+        </li >
+        <li onclick="onChangeItem('cloud_compute', this)">
+          <span>
+            <a href="#" name="cloud_compute">云计算</a>
+          </span>
+        </li>
+        <li onclick="onChangeItem('smart_hardware', this)">
+          <span>
+            <a href="#" name="smart_hardware">智能硬件</a>
+          </span>
+        </li>
+        <li onclick="onChangeItem('medical', this)">
+          <span>
+            <a href="#" name="medical">医疗</a>
+          </span>
+        </li>
+        <li onclick="onChangeItem('region_link', this)">
+          <span>
+            <a href="#" name="region_link">区块链</a>
+          </span>
+        </li>
+        <li onclick="onChangeItem('insurance', this)">
+          <span>
+            <a href="#" name="insurance">保险</a>
+          </span>
+        </li>
+        <li onclick="onChangeItem('inter_transport', this)">
+          <span>
+            <a href="#" name="inter_transport">跨境物流</a>
+          </span>
+        </li>
+        <li onclick="onChangeItem('investment', this)">
+          <span>
+            <a href="#" name="investment">投资</a>
+          </span>
+        </li>
+      </ul>
+    </div>
+    <br/>
+    <br/>
+    <div class="fast_section_list">
+      <ul id="content_list">
+        {% for msg in msg_list reversed %}
+        <li style="list-style: none">
+            <h2 class="title">{{ msg.hash_title }}</h2>
+            <div class="share_groups">{{ msg.create_time }}</div>
+            <p>{{ msg.description_text }}</p>
+            <a href={{ msg.news_url|default:"javascript:void(0);" }}>原文链接</a>
+            </li>
+        {% endfor %}
+	  </ul>
+    </div>
+  </body>
+</html>

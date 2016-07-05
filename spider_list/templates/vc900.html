@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head> 
+  <meta charset="utf-8" /> 
+  <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1, user-scalable=no" /> 
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" /> 
+  <meta name="description" content="PEPM 中国领先的股权投资管理软件！" /> 
+  <title>VC800</title> 
+  <meta name="renderer" content="webkit" /> 
+  <meta http-equiv="Cache-Control" content="no-siteapp" /> 
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" /> 
+  <link rel="stylesheet" href="static/css/vc900.css" /> 
+  <script type="text/javascript">
+    var from_app = "false";
+    </script> 
+  <script type="text/javascript" src="static/js/pepm.min.js?v=1467354000466"></script> 
+  <!--[if lte IE 9]>
+    <script type="text/javascript" src="static/js/ie.min.js?v=1467354000466"></script>
+    <![endif]--> 
+ </head> 
+ <body> 
+  <div id="layout"> 
+   <a href="javascript:;" id="menuLink" class="menu-link"><span></span></a> 
+   <div id="menu"> 
+    <div class="pure-menu pure-menu-open"> 
+     <a class="pure-menu-heading head" href="?/">演示系统</a> 
+     <ul> 
+      <li class="" data-level=""> <a href="?/home/"><span class="icon glyphicon glyphicon-home"></span>首页</a> </li> 
+      <li class="" data-level=""> <a href="?/oa/"><span class="icon glyphicon glyphicon-blackboard"></span>OA</a> </li> 
+      <li class="" data-level=""> <a href="?/event/"><span class="icon glyphicon glyphicon-th-list"></span>事件</a> </li> 
+      <li class="pure-menu-selected menu-item-divided" data-level=""> <a href="?/company/"><span class="icon glyphicon glyphicon-briefcase"></span>项目池</a> </li> 
+      <li class="" data-level=""> <a href="?/deal/"><span class="icon glyphicon glyphicon-flag"></span>投资</a> </li> 
+      <li class="menu-item-divided" data-level=""> <a href="?/customer/"><span class="icon glyphicon glyphicon-plane"></span>客户池</a> </li> 
+      <li class="" data-level=""> <a href="?/lp/"><span class="icon glyphicon glyphicon-tree-deciduous"></span>签约客户</a> </li> 
+      <li class="menu-item-divided" data-level=""> <a href="?/fund/"><span class="icon glyphicon glyphicon-stats"></span>基金</a> </li> 
+      <li class="" data-level=""> <a href="?/cashflow/"><span class="icon glyphicon glyphicon-usd"></span>现金流</a> </li> 
+      <li class="" data-level=""> <a href="?/analytics/"><span class="icon glyphicon glyphicon-eye-open"></span>分析</a> </li> 
+      <li class="menu-item-divided" data-level=""> <a href="?/search/"><span class="icon glyphicon glyphicon-search"></span>检索</a> </li> 
+      <li class="" data-level=""> <a href="?/doc/"><span class="icon glyphicon glyphicon-book"></span>知识库</a> </li> 
+      <li class="" data-level=""> <a href="?/system/"><span class="icon glyphicon glyphicon-wrench"></span>配置</a> </li> 
+      <li class="" data-level=""> <a href="?/trash/"><span class="icon glyphicon glyphicon-trash"></span>回收站</a> </li> 
+      <li class="menu-item-divided" data-level=""> <a href="?/account/"><span class="icon glyphicon glyphicon-user"></span>帐号</a> </li> 
+      <li class="" data-level=""> <a href="?/notification/"><span class="icon glyphicon glyphicon-bell"></span>通知 <span class="badge" id="notification" style="display:none;"></span></a> </li> 
+      <li class="" data-level=""> <a href="?/calendar/"><span class="icon glyphicon glyphicon-calendar"></span>日程</a> </li> 
+      <li class="" data-level=""> <a href="?/body/"><span class="icon glyphicon glyphicon-tower"></span>机构</a> </li> 
+      <li class="" data-level=""> <a href="?/logout/"><span class="icon glyphicon glyphicon-log-out"></span>登出</a> </li> 
+     </ul> 
+    </div> 
+   </div> 
+   <div id="main"> 
+    <div class="container"> 
+     <!--[if lte IE 9]>
+<div class="ie-notice" style="text-align:center;color:#a94442;background:#f2dede;position:fixed;top:0;width:100%;z-index:2000;padding:10px 0;">你的浏览器太古老，请 <a href="?/ie_upgrade/" target="_blank" style="color:#a94442;"><strong>升级浏览器</strong></a> 以获得更好的体验！</div>
+<![endif]--> 
+     <div> 
+      <ul class="breadcrumb"> 
+       <li><a href="?">首页</a> </li> 
+       <li><a href="?/company/">项目池</a> </li> 
+       <li class="active"> 浏览 &nbsp; &gt;</li> 
+      </ul> 
+      <div class="top-menu pure-menu pure-menu-open pure-menu-horizontal"> 
+       <ul> 
+        <li class="item pure-menu-selected"><a href="?/company/index/">浏览</a></li> 
+        <li class="item "><a href="?/company/add/">新增</a></li> 
+        <li class="item "><a href="?/company/export/">导出</a></li> 
+       </ul> 
+      </div> 
+      <div class="pepm-content"> 
+       <form class="pure-form pure-control-group pull-right"> 
+        <button type="button" class="pure-button btn-filter"><span class="glyphicon glyphicon-filter" aria-hidden="true"></span> 搜索</button> 
+       </form> 
+       <form method="POST" action="?/entity/batch_del/" id="former1" class="pure-form"> 
+        <table class="table table-hover" id="browse_list" width="100%"> 
+         <thead class="nowrap"> 
+          <tr> 
+           <th width="10"><input type="checkbox" id="all" /></th> 
+           <th width="10">&nbsp;</th> 
+           <th class="">企业简称</th> 
+           <th class="">行业分类</th> 
+           <th class="hide-sm ">发展阶段</th> 
+           <th class="hide-sm ">类别</th> 
+           <th class="hide-sm hide-md ">法人代表</th> 
+           <th class="hide-sm hide-md ">注册资本</th> 
+          </tr> 
+         </thead> 
+         <tfoot style="display:table-header-group;"> 
+          <tr class="filter" style="display:none;"> 
+           <th class="no-filter"></th> 
+           <th class="no-filter"></th> 
+           <th class="" data-type="input"></th> 
+           <th class="" data-type="select"></th> 
+           <th class="hide-sm " data-type="select"></th> 
+           <th class="hide-sm " data-type="select"></th> 
+           <th class="hide-sm hide-md " data-type="0"></th> 
+           <th class="hide-sm hide-md " data-type="0"></th> 
+          </tr> 
+         </tfoot> 
+         <tbody> 
+          <tr> 
+           <td><input type="checkbox" name="sid[]" value="xucy" /></td> 
+           <td class="nowrap">1</td> 
+           <!--  <td> <span class="tags"></span> <a href="?/company/view/xucy/" >耳朵眼炸糕1</a>  </td> --> 
+           <td class=""> <a href="?/company/view/xucy/">耳朵眼炸糕1</a> </td> 
+           <td class=""> 企业服务 </td> 
+           <td class="hide-sm "> 早期 </td> 
+           <td class="hide-sm "> </td> 
+           <td class="hide-sm hide-md "> 张三 </td> 
+           <td class="hide-sm hide-md "> </td> 
+          </tr> 
+          <tr> 
+           <td><input type="checkbox" name="sid[]" value="xucl" /></td> 
+           <td class="nowrap">2</td> 
+           <!--  <td> <span class="tags"></span> <a href="?/company/view/xucl/" >狗不理包子</a>  </td> --> 
+           <td class=""> <a href="?/company/view/xucl/">狗不理包子</a> </td> 
+           <td class=""> TMT </td> 
+           <td class="hide-sm "> 早期 </td> 
+           <td class="hide-sm "> 已投 </td> 
+           <td class="hide-sm hide-md "> </td> 
+           <td class="hide-sm hide-md "> </td> 
+          </tr> 
+          <tr> 
+           <td><input type="checkbox" name="sid[]" value="xuce" /></td> 
+           <td class="nowrap">3</td> 
+           <!--  <td> <span class="tags"></span> <a href="?/company/view/xuce/" >天津麻花</a>  </td> --> 
+           <td class=""> <a href="?/company/view/xuce/">天津麻花</a> </td> 
+           <td class=""> TMT </td> 
+           <td class="hide-sm "> 早期 </td> 
+           <td class="hide-sm "> 已投 </td> 
+           <td class="hide-sm hide-md "> </td> 
+           <td class="hide-sm hide-md "> </td> 
+          </tr> 
+          <tr> 
+           <td><input type="checkbox" name="sid[]" value="xuth" /></td> 
+           <td class="nowrap">4</td> 
+           <!--  <td> <span class="tags"></span> <a href="?/company/view/xuth/" >海岸集团</a>  </td> --> 
+           <td class=""> <a href="?/company/view/xuth/">海岸集团</a> </td> 
+           <td class=""> TMT </td> 
+           <td class="hide-sm "> 早期 </td> 
+           <td class="hide-sm "> 已投 </td> 
+           <td class="hide-sm hide-md "> 爱仕达 </td> 
+           <td class="hide-sm hide-md "> 500000 </td> 
+          </tr> 
+          <tr> 
+           <td><input type="checkbox" name="sid[]" value="xuf6" /></td> 
+           <td class="nowrap">5</td> 
+           <!--  <td> <span class="tags"></span> <a href="?/company/view/xuf6/" >齐齐科技</a>  </td> --> 
+           <td class=""> <a href="?/company/view/xuf6/">齐齐科技</a> </td> 
+           <td class=""> TMT </td> 
+           <td class="hide-sm "> 早期 </td> 
+           <td class="hide-sm "> 拟投 </td> 
+           <td class="hide-sm hide-md "> 高大上 </td> 
+           <td class="hide-sm hide-md "> 2000000 </td> 
+          </tr> 
+          <tr> 
+           <td><input type="checkbox" name="sid[]" value="xu9e" /></td> 
+           <td class="nowrap">6</td> 
+           <!--  <td> <span class="tags"></span> <a href="?/company/view/xu9e/" >MOMO 拆红筹项目</a>  </td> --> 
+           <td class=""> <a href="?/company/view/xu9e/">MOMO 拆红筹项目</a> </td> 
+           <td class=""> 互联网金融 </td> 
+           <td class="hide-sm "> 早期 </td> 
+           <td class="hide-sm "> 拟投 </td> 
+           <td class="hide-sm hide-md "> </td> 
+           <td class="hide-sm hide-md "> </td> 
+          </tr> 
+          <tr> 
+           <td><input type="checkbox" name="sid[]" value="xu95" /></td> 
+           <td class="nowrap">7</td> 
+           <!--  <td> <span class="tags"></span> <a href="?/company/view/xu95/" >钱会计代理记账</a>  </td> --> 
+           <td class=""> <a href="?/company/view/xu95/">钱会计代理记账</a> </td> 
+           <td class=""> 互联网金融 </td> 
+           <td class="hide-sm "> 早期 </td> 
+           <td class="hide-sm "> 入库 </td> 
+           <td class="hide-sm hide-md "> </td> 
+           <td class="hide-sm hide-md "> </td> 
+          </tr> 
+          <tr> 
+           <td><input type="checkbox" name="sid[]" value="xujs" /></td> 
+           <td class="nowrap">8</td> 
+           <!--  <td> <span class="tags"></span> <a href="?/company/view/xujs/" >阿里巴巴</a>  </td> --> 
+           <td class=""> <a href="?/company/view/xujs/">阿里巴巴</a> </td> 
+           <td class=""> 互联网金融 </td> 
+           <td class="hide-sm "> 并购 </td> 
+           <td class="hide-sm "> 入库 </td> 
+           <td class="hide-sm hide-md "> </td> 
+           <td class="hide-sm hide-md "> </td> 
+          </tr> 
+          <tr> 
+           <td><input type="checkbox" name="sid[]" value="xupx" /></td> 
+           <td class="nowrap">9</td> 
+           <!--  <td> <span class="tags"></span> <a href="?/company/view/xupx/" >大智慧</a>  </td> --> 
+           <td class=""> <a href="?/company/view/xupx/">大智慧</a> </td> 
+           <td class=""> 智能硬件 </td> 
+           <td class="hide-sm "> 早期 </td> 
+           <td class="hide-sm "> 入库 </td> 
+           <td class="hide-sm hide-md "> 大块头 </td> 
+           <td class="hide-sm hide-md "> </td> 
+          </tr> 
+          <tr> 
+           <td><input type="checkbox" name="sid[]" value="xup3" /></td> 
+           <td class="nowrap">10</td> 
+           <!--  <td> <span class="tags"></span> <a href="?/company/view/xup3/" >东方财富</a>  </td> --> 
+           <td class=""> <a href="?/company/view/xup3/">东方财富</a> </td> 
+           <td class=""> 互联网金融 </td> 
+           <td class="hide-sm "> 早期 </td> 
+           <td class="hide-sm "> 入库 </td> 
+           <td class="hide-sm hide-md "> </td> 
+           <td class="hide-sm hide-md "> </td> 
+          </tr> 
+          <tr> 
+           <td><input type="checkbox" name="sid[]" value="xxr7" /></td> 
+           <td class="nowrap">11</td> 
+           <!--  <td> <span class="tags"></span> <a href="?/company/view/xxr7/" >CSQY</a>  </td> --> 
+           <td class=""> <a href="?/company/view/xxr7/">CSQY</a> </td> 
+           <td class=""> 互联网金融 </td> 
+           <td class="hide-sm "> 早期 </td> 
+           <td class="hide-sm "> 入库 </td> 
+           <td class="hide-sm hide-md "> 测试企业 </td> 
+           <td class="hide-sm hide-md "> 10000000 </td> 
+          </tr> 
+          <tr> 
+           <td><input type="checkbox" name="sid[]" value="xx6t" /></td> 
+           <td class="nowrap">12</td> 
+           <!--  <td> <span class="tags"></span> <a href="?/company/view/xx6t/" >A公司</a>  </td> --> 
+           <td class=""> <a href="?/company/view/xx6t/">A公司</a> </td> 
+           <td class=""> 医疗健康 </td> 
+           <td class="hide-sm "> 早期 </td> 
+           <td class="hide-sm "> 入库 </td> 
+           <td class="hide-sm hide-md "> 啊啊 </td> 
+           <td class="hide-sm hide-md "> </td> 
+          </tr> 
+          <tr> 
+           <td><input type="checkbox" name="sid[]" value="xz12" /></td> 
+           <td class="nowrap">13</td> 
+           <!--  <td> <span class="tags"></span> <a href="?/company/view/xz12/" >东方牛豪</a>  </td> --> 
+           <td class=""> <a href="?/company/view/xz12/">东方牛豪</a> </td> 
+           <td class=""> 消费 </td> 
+           <td class="hide-sm "> 早期 </td> 
+           <td class="hide-sm "> 入库 </td> 
+           <td class="hide-sm hide-md "> 董先生 </td> 
+           <td class="hide-sm hide-md "> 100万 </td> 
+          </tr> 
+         </tbody> 
+        </table> 
+        <div style="margin: 0 0 5px 0; float:right;">
+          选中项
+         <input type="hidden" name="action" id="action" value="" /> 
+         <button style="display:inline-block;" class="pure-button" type="button" onclick="if(confirm('确定要删除选定文件？'))faction('del');"><span class="glyphicon glyphicon-remove"></span> 删除</button>  
+         <script>
+var del_file = function(url,elem){if(confirm('是否确定要删除所选项 ？'))$.get(url,function(data){if(data == 1 )$('#'+elem).fadeOut();else alert(data);});};
+var faction = function(act){$('#action').val(act);$.post('?/company/action',$('#former1').serialize(),function(data){alert(data.msg);if(data.reload)location.reload();},'json');};
+var filt = function(str){$('#browse_list').dataTable().fnFilter( str );};
+</script> 
+         <script type="text/javascript" src="static/js/jquery.dataTables.min.js"></script> 
+         <script>
+$(document).ready(function() {
+  var dt = $('#browse_list').dataTable({
+    "sPaginationType": "full_numbers",
+    "aoColumnDefs": [ { "bSortable": false, "aTargets": [ 0 ] }],
+    "aaSorting": [[ 1, "asc" ]],
+    "bPaginate": false
+  });
+
+  dt.initComplete = render_filter(dt);
+
+  var tag = window.location.hash;
+  if(tag !== ''){
+    tag = decodeURIComponent(tag.substr(1));
+    filt(tag);
+  }
+});
+</script> 
+        </div>
+       </form> 
+      </div> 
+     </div> 
+    </div> 
+   </div>   
+  </div>
+ </body>
+</html>

@@ -11,6 +11,7 @@ urlpatterns = patterns('',
     # url(r'^blog/', include('blog.urls')),
 
     url(r'^item', 'spider_list.views.get_item', name='get_item'),
+    url(r'^vc900', 'spider_list.views.vc900', name='vc900'),
     url(r'^admin/', include(admin.site.urls)),
     #url(r'^desc', 'spider_list.views.desc'),
 )

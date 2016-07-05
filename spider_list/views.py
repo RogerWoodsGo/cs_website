@@ -19,6 +19,8 @@ remainDay = 2
 
 def sendmail(request):
     return render(request, 'sendmail.html')
+def vc900(request):
+    return render(request, 'vc900.html')
 def index(request):
     #info_all = list(info_all_1) 
     info_all = []
